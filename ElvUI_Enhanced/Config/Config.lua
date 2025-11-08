@@ -549,8 +549,18 @@ local function BlizzardOptions()
 							WF:QuestLevelToggle()
 						end
 					},
-					settings = {
+					color = {
 						order = 5,
+						type = "toggle",
+						name = L["Colorize Quests"],
+						desc = L["Color quests by difficulty and progress in the Quest Tracker."],
+						set = function(info, value)
+							E.db.enhanced.watchframe.color = value
+							WF:QuestColorToggle()
+						end
+					},
+					settings = {
+						order = 6,
 						type = "group",
 						name = L["Visibility State"],
 						guiInline = true,

@@ -211,6 +211,7 @@ P.enhanced = {
 	watchframe = {
 		enable = false,
 		level = false,
+		color = false,
 		city = "COLLAPSED",
 		pvp = "HIDDEN",
 		arena = "HIDDEN",
