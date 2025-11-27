@@ -428,14 +428,13 @@ do
 end
 
 function module:PaperDollFrame_SetLevel()
-	local _, specName = E:GetTalentSpecInfo()
 	local classColor = RAID_CLASS_COLORS[E.myclass]
 	local classColorString = format("FF%02x%02x%02x", classColor.r*255, classColor.g*255, classColor.b*255)
 
-	if specName == NONE then
+	if E.myspecName == NONE then
 		CharacterLevelText:SetFormattedText(_PLAYER_LEVEL_NO_SPEC, E.mylevel, classColorString, E.myLocalizedClass)
 	else
-		CharacterLevelText:SetFormattedText(_PLAYER_LEVEL, E.mylevel, classColorString, specName, E.myLocalizedClass)
+		CharacterLevelText:SetFormattedText(_PLAYER_LEVEL, E.mylevel, classColorString, E.myspecName, E.myLocalizedClass)
 	end
 
 	if CharacterLevelText:GetWidth() > 205 then
