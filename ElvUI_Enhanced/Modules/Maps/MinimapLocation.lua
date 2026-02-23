@@ -206,6 +206,7 @@ end
 
 local function InitializeCallback()
 	ML:Initialize()
+	ML:UpdateSettings()
 end
 
 E:RegisterModule(ML:GetName(), InitializeCallback)
