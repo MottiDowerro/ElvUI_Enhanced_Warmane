@@ -235,3 +235,6 @@ L["Take Cash"] = "Принимать наличные"
 L["This addon has been disabled. You should install an updated version."] = true
 L["Where to show"] = "Где показать"
 L["seconds"] = "секунд"
+L["COLORS"] = "Цвета"
+L["xOffset"] = "Позиция X"
+L["yOffset"] = "Позиция Y"
