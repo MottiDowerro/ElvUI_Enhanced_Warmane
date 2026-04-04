@@ -111,13 +111,38 @@ local function GeneralOptions()
 				end
 			},
 			showQuestLevel = {
-				type = "toggle",
-				name = L["Show Quest Level"],
-				desc = L["Display quest levels at Quest Log."],
-				set = function(info, value)
-					E.db.enhanced.general.showQuestLevel = value
-					M:QuestLevelToggle()
-				end
+			        type = "toggle",
+			        name = L["Show Quest Level"],
+			        desc = L["Display quest levels at Quest Log."],
+			        set = function(info, value)
+			                E.db.enhanced.general.showQuestLevel = value
+			                M:QuestLevelToggle()
+			        end
+			},
+			clearTargetGroup = {
+			        order = 15,
+			        type = "group",
+			        name = L["Clear Target"],
+			        guiInline = true,
+			        get = function(info) return E.db.enhanced.general.clearTarget[info[#info]] end,
+			        set = function(info, value)
+			                E.db.enhanced.general.clearTarget[info[#info]] = value
+			                E:GetModule("Enhanced_ClearTarget"):UpdateBinding()
+			        end,
+			        args = {
+			                enable = {
+			                        order = 1,
+			                        type = "toggle",
+			                        name = L["Enable"],
+			                        desc = L["Clear your current target."],
+			                },
+			                key = {
+			                        order = 2,
+			                        type = "keybinding",
+			                        name = L["Clear Target Keybind"],
+			                        hidden = function() return not E.db.enhanced.general.clearTarget.enable end,
+			                },
+			        },
 			},
 			dpsLinks = {
 				type = "toggle",

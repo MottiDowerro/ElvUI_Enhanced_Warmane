@@ -198,6 +198,8 @@ function addon:Initialize()
 
 	self:PrintAddonMerged("ElvUI_MinimapButtons")
 	self:PrintAddonMerged("ElvUI_FogofWar")
+
+	_G.BINDING_HEADER_ELVUI_ENHANCED = self:ColorizeSettingName(L["Enhanced"])
 end
 
 local function InitializeCallback()

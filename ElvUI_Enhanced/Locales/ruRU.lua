@@ -11,29 +11,29 @@ L["WATCHFRAME_DESC"] = "Настройте отображение списка �
 L["GearScore '3.1.20b - Release' is not for WotLK. Download 3.1.7. Disable this version?"] = "GearScore '3.1.20b - Release' не для WotLK. Загрузите 3.1.7. Отключить эту версию?"
 
 -- AddOn List
-L["Enable All"] = true
-L["Dependencies: "] = true
-L["Disable All"] = true
-L["Load AddOn"] = true
-L["Requires Reload"] = true
+L["Enable All"] = "Вкл все"
+L["Dependencies: "] = "Зависимости: "
+L["Disable All"] = "Выкл все"
+L["Load AddOn"] = "Загрузить аддон"
+L["Requires Reload"] = "Надо Перезагрузить"
 
 -- Chat
-L["Filter DPS meters Spam"] = true
-L["Replaces reports from damage meters with a clickable hyperlink to reduce chat spam"] = true
+L["Filter DPS meters Spam"] = "Фильтр ДПС СПАМ"
+L["Replaces reports from damage meters with a clickable hyperlink to reduce chat spam"] = "Заменяет отчеты от измерителей повреждений с помощью кликабельной гиперссылки для уменьшения спама чата"
 
 -- Datatext
-L["Ammo/Shard Counter"] = true
-L["Combat Indicator"] = true
-L["Distance"] = true
-L["In Combat"] = true
-L["New Mail"] = "Новое письмо"
+L["Ammo/Shard Counter"] = "Счетчик патрон / стрел "
+L["Combat Indicator"] = "Боевой индикатор"
+L["Distance"] = "Расстояние"
+L["In Combat"] = "В бою"
+L["New Mail"] = "Новое Письмо"
 L["No Mail"] = "Нет писем"
-L["Out of Combat"] = true
-L["Reincarnation"] = true
-L["Target Range"] = true
+L["Out of Combat"] = "Из боя"
+L["Reincarnation"] = "Реинкарнация"
+L["Target Range"] = "Целевой диапазон"
 
 -- Death Recap
-L["Death Recap Frame"] = true
+L["Death Recap Frame"] = "Рамка Recap Death"
 L["%s %s"] = "Урон: %s %s"
 L["%s by %s"] = "%s - %s"
 L["%s sec before death at %s%% health."] = "%s сек. до смерти при объеме здоровья %s%%"
@@ -48,93 +48,96 @@ L["You died."] = "Вы умерли."
 
 -- Decline Duels
 L["Auto decline all duels"] = "Автоматически отклонять все дуэли."
-L["Decline Duel"] = true
-L["Declined duel request from "] = "DДуэль отклонена от "
+L["Decline Duel"] = "Отклонять дуэли"
+L["Declined duel request from "] = "Отклонять дуэль от "
 
 -- Enhanced Character Frame / Paperdoll Backgrounds
-L["Character Background"] = true
-L["Enhanced Character Frame"] = true
-L["Enhanced Model Frames"] = true
-L["Inspect Background"] = true
-L["Paperdoll Backgrounds"] = true
-L["Pet Background"] = true
+L["Character Background"] = "Фон персонажа"
+L["Enhanced Character Frame"] = "Улучшенный фрейм персонажа"
+L["Enhanced Model Frames"] = "Улучшенная модель персонажа"
+L["Inspect Background"] = "Проверять фон"
+L["Paperdoll Backgrounds"] = "Фоны всплывающего окна"
+L["Pet Background"] = "Фон пета"
 
 -- Equipment
 L["Damaged Only"] = "Только поврежденные"
 L["Enable/Disable the display of durability information on the character screen."] = "Включить/Выключить отображение информации о прочности предметов в окне персонажа."
 L["Enable/Disable the display of item levels on the character screen."] = "Включить/Выключить отображение уровня предмета в окне персонажа."
 L["Only show durabitlity information for items that are damaged."] = "Показывать уровень прочности только на поврежденных предметах."
-L["Quality Color"] = true
+L["Quality Color"] = "Качественный цвет"
 
 -- General
-L["Add button to Dressing Room frame with ability to undress model."] = true
+L["Add button to Dressing Room frame with ability to undress model."] = "Добавляет кнопку в осмотр позваляющую раздеть модель"
 L["Add button to Trainer frame with ability to train all available skills in one click."] = true
-L["Alt-Click Merchant"] = true
-L["Already Known"] = true
-L["Animated Achievement Bars"] = true
+L["Alt-Click Merchant"] = "Alt-Click Торговец"
+L["Already Known"] = "Уже известно"
+L["Animated Achievement Bars"] = "Анимированные бары достижений"
 L["Automatically change your watched faction on the reputation bar to the faction you got reputation points for."] = "Автоматическое изменение фракции на панели репутации на ту, очки репутации которой вы получили."
 L["Automatically release body when killed inside a battleground."] = "Автоматически покидать тело после смерти на полях боя."
-L["Automatically select the quest reward with the highest vendor sell value."] = true
-L["Change color of item icons which already known."] = true
+L["Automatically select the quest reward with the highest vendor sell value."] = "Автоматически выберает награду квеста с наивысшим значением продажи торговцу"
+L["Change color of item icons which already known."] = "Измените цвет значков предмета, которые уже известны."
 L["Changes the transparency of all the movers."] = "Изменяет прозрачность фиксаторов"
-L["Display quest levels at Quest Log."] = true
-L["Hide Zone Text"] = true
-L["Holding Alt key while buying something from vendor will now buy an entire stack."] = true
+L["Display quest levels at Quest Log."] = "Показать уровни квеста в журнале"
+L["Hide Zone Text"] = "Скрыть текст зоны"
+L["Holding Alt key while buying something from vendor will now buy an entire stack."] = "Держи Alt, покупая что-то у продавца, чтобы купить целую стопку."
 L["Mover Transparency"] = "Прозрачность фиксаторов"
 L["PvP Autorelease"] = "Автовыход из тела"
-L["Select Quest Reward"] = true
-L["Show Quest Level"] = true
+L["Select Quest Reward"] = "Выбирать Награду задания"
+L["Show Quest Level"] = "Показать уровень квеста"
 L["Track Reputation"] = "Отслеживание репутации"
-L["Train All Button"] = true
-L["Undress Button"] = true
+L["Train All Button"] = "Кнопка выучить все"
+L["Undress Button"] = "Кнопка для раздевания"
 L["Undress"] = "Раздеть"
+L["Clear Target"] = "Сброс цели"
+L["Clear Target Keybind"] = "Клавиша для сброса цели"
+L["Clear your current target."] = "Сбрасывает вашу текущую цель."
 
 -- HD Models Portrait Fix
 L["Debug"] = true
-L["List of models with broken portrait camera. Separete each model name with ';' simbol"] = true
-L["Models to fix"] = true
-L["Portrait HD Fix"] = true
-L["Print to chat model names of units with enabled 3D portraits."] = true
+L["List of models with broken portrait camera. Separete each model name with ';' simbol"] = "Список моделей со сломанной портретной камерой. Отделять каждое название модели символом ';'"
+L["Models to fix"] = "Модели для исправления"
+L["Portrait HD Fix"] = "Исправление портретов"
+L["Print to chat model names of units with enabled 3D portraits."] = "Печатает в чате модели имен юнитов с включенными 3D-портретами."
 
 -- Interrupt Tracker
-L["Interrupt Tracker"] = true
+L["Interrupt Tracker"] = "Прерывания"
 
 -- Nameplates
-L["Cache Unit Class"] = true
+L["Cache Unit Class"] = "Кэшировать классы юнитов"
 
 -- Minimap
 L["Above Minimap"] = "Над миникартой"
-L["Combat Hide"] = true
+L["Combat Hide"] = "Прятать в бою"
 L["FadeIn Delay"] = "Задержка появления"
 L["Hide minimap while in combat."] = "Скрывать миникарту во время боя."
-L["Show Location Digits"] = true
-L["Toggle Location Digits."] = true
+L["Show Location Digits"] = "Показать цифры местоположения"
+L["Toggle Location Digits."] = "Переключить цифры местоположения."
 L["Location Digits"] = "Цифры координат"
-L["Location Panel"] = true
+L["Location Panel"] = "Текст локации"
 L["Number of digits for map location."] = "Колличество цифр после запятой в координатах."
 L["The time to wait before fading the minimap back in after combat hide. (0 = Disabled)"] = "Время ожидания появления миникарты после выхода из боя. (0 = Выключено)"
-L["Toggle Location Panel."] = true
+L["Toggle Location Panel."] = "Включает текст локации"
 
 -- Timer Tracker
 L["Timer Tracker"] = true
 L["Hook DBM"] = true
 
 -- Tooltip
-L["Check Player"] = true
+L["Check Player"] = "Проверьте игрока"
 L["Check achievement completion instead of boss kill stats.\nSome servers log incorrect boss kill statistics, this is an alternative way to get player progress."] = true
-L["Colorize the tooltip border based on item quality."] = "Окрашивать бордюр тултипа в цвет качества предмета"
-L["Icecrown Citadel"] = true
+L["Colorize the tooltip border based on item quality."] = "Окрашивать край тултипа в цвет качества предмета"
+L["Icecrown Citadel"] = "ЦЛК"
 L["Item Border Color"] = "Цвет рамки предметов"
 L["Progress Info"] = "Прогресс"
-L["Ruby Sanctum"] = true
+L["Ruby Sanctum"] = "РС"
 L["Show/Hides an Icon for Achievements on the Tooltip."] = true
 L["Show/Hides an Icon for Items on the Tooltip."] = true
 L["Show/Hides an Icon for Spells on the Tooltip."] = true
 L["Show/Hides an Icon for Spells and Items on the Tooltip."] = true
-L["Tiers"] = true
-L["Tooltip Icon"] = true
-L["Trial of the Crusader"] = true
-L["Ulduar"] = true
+L["Tiers"] = "Подземелья"
+L["Tooltip Icon"] = "Значок всплывающей подсказки"
+L["Trial of the Crusader"] = "ИК"
+L["Ulduar"] = "Ульдуар"
 
 -- Movers
 L["Loss Control"] = "Потери контроля"
@@ -147,11 +150,11 @@ L["Disarm"] = "Разоружение"
 L["Lose Control"] = "Иконка потери контроля"
 L["PvE"] = "Рейдовые"
 L["Root"] = "Удержание на месте"
-L["Silence"] = "Молчание"
+L["Silence"] = "Безмолвие"
 L["Snare"] = "Замедление"
 
 -- Unitframes
-L["Class Icons"] = true
+L["Class Icons"] = "Иконки класса"
 L["Detached Height"] = "Высота при откреплении"
 L["Show class icon for units."] = "Показывать иконку класса на цели."
 
@@ -195,43 +198,48 @@ L["ALT_KEY"] = "ALT"
 
 L["%d mails\nShift-Click to remove empty mails."] = true
 L["Addon |cffFFD100%s|r was merged into |cffFFD100ElvUI_Enhanced|r.\nPlease remove it to avoid conflicts."] = true
-L["Cache Unit Guilds / NPC Titles"] = true
-L["Check Achievements"] = true
+L["Cache Unit Guilds / NPC Titles"] = "Кэшировать Гильдии / NPC титулы"
+L["Check Achievements"] = "Проверять достижения"
 L["Collected "] = true
 L["Collection completed."] = true
 L["Collection stopped, inventory is full."] = true
 L["Color based on reaction type."] = true
-L["Compact mode"] = true
+L["Compact mode"] = "Компактный режим"
 L["Companion Background"] = true
 L["Desaturate"] = true
-L["Detached Portrait"] = true
-L["Dressing Room"] = true
-L["Enhanced"] = true
-L["Equipment Info"] = true
-L["Error Frame"] = true
-L["Everywhere"] = true
-L["Fog of War"] = true
-L["Grow direction"] = true
-L["Guild"] = true
-L["Inside Minimap"] = true
-L["Key Press Animation"] = true
-L["Map"] = true
-L["Minimap Button Grabber"] = true
-L["NPC"] = "НИП"
-L["Overlay Color"] = true
-L["Reaction Color"] = true
+L["Detached Portrait"] = "Открепить портрет"
+L["Dressing Room"] = "Гардеробная"
+L["Enhanced"] = "Enhanced"
+L["Equipment Info"] = "Информация об предметах"
+L["Error Frame"] = "Ошибки "
+L["Everywhere"] = "Повсюду"
+L["Fog of War"] = "Туман войны"
+L["Grow direction"] = "Направление роста"
+L["Guild"] = "Гильдия"
+L["Inside Minimap"] = "Внутри миникарты"
+L["Key Press Animation"] = "Анимация нажатия"
+L["Map"] = "Карта"
+L["Minimap Button Grabber"] = "Собирать значки на миникарте"
+L["NPC"] = "NPC"
+L["Overlay Color"] = "Цвет тумана"
+L["Reaction Color"] = "Цвет реакции"
 L["Reported by %s"] = true
 L["Rotation"] = true
 L["Separator"] = true
 L["Set the height of Error Frame. Higher frame can show more lines at once."] = true
 L["Set the width of Error Frame. Too narrow frame may cause messages to be split in several lines"] = true
-L["Show Everywhere"] = true
-L["Show on Arena."] = true
-L["Show on Battleground."] = true
-L["Smooth Animations"] = true
-L["Take All"] = true
-L["Take All Mail"] = true
-L["Take Cash"] = true
+L["Show Everywhere"] = "Показать везде"
+L["Show on Arena."] = "Показать на арене."
+L["Show on Battleground."] = "Показать на поле битвы."
+L["Smooth Animations"] = "Плавные анимации"
+L["Take All"] = "Взять все"
+L["Take All Mail"] = "Взять всю почту"
+L["Take Cash"] = "Принимать наличные"
 L["This addon has been disabled. You should install an updated version."] = true
-L["Where to show"] = true
-L["seconds"] = true
+L["Where to show"] = "Где показать"
+L["seconds"] = "секунд"
+L["COLORS"] = "Цвета"
+L["xOffset"] = "Позиция X"
+L["yOffset"] = "Позиция Y"
+L["NamePlates"] = "Индикаторы здоровья"
+L["BlizzUI Improvements"] = "Улучшения интерфейса Blizzard"

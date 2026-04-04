@@ -12,6 +12,10 @@ P.enhanced = {
 		trainAllSkills = false,
 		undressButton = false,
 		alreadyKnown = false,
+		clearTarget = {
+			enable = false,
+			key = "",
+		},
 	},
 	actionbar = {
 		keyPressAnimation = {

@@ -8,6 +8,7 @@
 	<Script file="LoseControl.lua"/>
 	<Script file="AlreadyKnown.lua"/>
 	<Script file="TrainAllSkills.lua"/>
+	<Script file="ClearTarget.lua"/>
 	<Script file="UndressButton.lua"/>
 	<Script file="AddonsCompatibility.lua"/>
 	<Script file="MerchantBuyStack.lua"/>

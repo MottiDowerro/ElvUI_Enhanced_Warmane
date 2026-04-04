@@ -88,6 +88,9 @@ L["Track Reputation"] = true
 L["Train All Button"] = true
 L["Undress Button"] = true
 L["Undress"] = true
+L["Clear Target"] = true
+L["Clear Target Keybind"] = true
+L["Clear your current target."] = true
 
 -- HD Models Portrait Fix
 L["Debug"] = true
