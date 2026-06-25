@@ -572,17 +572,88 @@ local function BlizzardOptions()
 						set = function(info, value)
 							E.db.enhanced.watchframe.level = value
 							WF:QuestLevelToggle()
-						end
+						end,
+						disabled = function() return not E.db.enhanced.watchframe.enable end
 					},
-					color = {
+					colors = {
 						order = 5,
-						type = "toggle",
-						name = L["Colorize Quests"],
-						desc = L["Color quests by difficulty and progress in the Quest Tracker."],
-						set = function(info, value)
-							E.db.enhanced.watchframe.color = value
-							WF:QuestColorToggle()
-						end
+						type = "group",
+						name = L["Colors"],
+						guiInline = true,
+						disabled = function() return not E.db.enhanced.watchframe.enable end,
+						args = {
+							color = {
+								order = 1,
+								type = "toggle",
+								name = L["Colorize Quests"],
+								desc = L["Color quests by difficulty and progress in the Quest Tracker."],
+								set = function(info, value)
+									E.db.enhanced.watchframe.color = value
+									WF:QuestColorToggle()
+								end
+							},
+							colorTransition = {
+								order = 2,
+								type = "toggle",
+								name = L["Color Transition"],
+								desc = L["Smoothly transition colors from uncompleted to completed as progress increases."],
+								set = function(info, value)
+									E.db.enhanced.watchframe.colorTransition = value
+									WF:UpdateWatchFrame()
+								end,
+								disabled = function() return not E.db.enhanced.watchframe.color or not E.db.enhanced.watchframe.enable end
+							},
+							customColorGroup = {
+								order = 3,
+								type = "group",
+								name = L["Custom Colors"],
+								guiInline = true,
+								args = {
+									customColor = {
+										order = 1,
+										type = "toggle",
+										name = L["Enable"],
+										desc = L["Enable custom colors for completed and uncompleted quests."],
+										width = "full",
+										set = function(info, value)
+											E.db.enhanced.watchframe.customColor = value
+											WF:UpdateWatchFrame()
+										end,
+										disabled = function() return not E.db.enhanced.watchframe.color or not E.db.enhanced.watchframe.enable end
+									},
+									completedColor = {
+										order = 2,
+										type = "color",
+										name = L["Completed Color"],
+										get = function(info)
+											local t = E.db.enhanced.watchframe.completedColor
+											return t.r, t.g, t.b
+										end,
+										set = function(info, r, g, b)
+											local t = E.db.enhanced.watchframe.completedColor
+											t.r, t.g, t.b = r, g, b
+											WF:UpdateWatchFrame()
+										end,
+										disabled = function() return not E.db.enhanced.watchframe.customColor or not E.db.enhanced.watchframe.color or not E.db.enhanced.watchframe.enable end
+									},
+									uncompletedColor = {
+										order = 3,
+										type = "color",
+										name = L["Uncompleted Color"],
+										get = function(info)
+											local t = E.db.enhanced.watchframe.uncompletedColor
+											return t.r, t.g, t.b
+										end,
+										set = function(info, r, g, b)
+											local t = E.db.enhanced.watchframe.uncompletedColor
+											t.r, t.g, t.b = r, g, b
+											WF:UpdateWatchFrame()
+										end,
+										disabled = function() return not E.db.enhanced.watchframe.customColor or not E.db.enhanced.watchframe.color or not E.db.enhanced.watchframe.enable end
+									},
+								},
+							},
+						},
 					},
 					settings = {
 						order = 6,

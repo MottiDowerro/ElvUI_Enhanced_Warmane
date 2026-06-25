@@ -70,11 +70,15 @@ function WF:UpdateSettings()
 		WF:UnregisterEvent('PLAYER_ENTERING_WORLD')
 		WF:UnregisterEvent('PLAYER_UPDATE_RESTING')
 	end
+
+	if WF.ToggleHooks then
+		WF:ToggleHooks()
+	end
 end
 
 function WF:UpdateWatchFrame()
 	local db = WF.db
-	if not db or not WatchFrame or WatchFrame.userCollapsed then return end
+	if not db or not db.enable or not WatchFrame or WatchFrame.userCollapsed then return end
 
 	for _, link in ipairs(WATCHFRAME_LINKBUTTONS or {}) do
 		if link.type == 'QUEST' then
@@ -100,12 +104,24 @@ function WF:UpdateWatchFrame()
 						elseif db.color then
 							local r, g, b = 1, 1, 1
 							if text == GetQuestLogCompletionText(questIndex) then
-								r, g, b = 0.25, 1, 0.25
+								if db.customColor then
+									r, g, b = db.completedColor.r, db.completedColor.g, db.completedColor.b
+								else
+									r, g, b = 0.25, 1, 0.25
+								end
 							else
 								local _, _, num, needed = strfind(text, '([%d]+)/([%d]+)')
 								if num and needed then
 									local progress = tonumber(num) / tonumber(needed)
-									r, g, b = E:ColorGradient(progress, 1, 0, 0, 1, 1, 0, 0.25, 1, 0.25)
+									if db.customColor then
+										if db.colorTransition then
+											r, g, b = E:ColorGradient(progress, db.uncompletedColor.r, db.uncompletedColor.g, db.uncompletedColor.b, db.completedColor.r, db.completedColor.g, db.completedColor.b)
+										else
+											r, g, b = db.uncompletedColor.r, db.uncompletedColor.g, db.uncompletedColor.b
+										end
+									else
+										r, g, b = E:ColorGradient(progress, 1, 0, 0, 1, 1, 0, 0.25, 1, 0.25)
+									end
 								end
 							end
 							line.text:SetTextColor(r, g, b)
@@ -159,14 +175,30 @@ function WF:UpdateWatchFrame()
 								if data.reqQuantity > 0 then
 									hasProgress = true
 									if data.done then
-										r, g, b = 0.25, 1, 0.25
+										if db.customColor then
+											r, g, b = db.completedColor.r, db.completedColor.g, db.completedColor.b
+										else
+											r, g, b = 0.25, 1, 0.25
+										end
 									else
 										local progress = data.quantity / data.reqQuantity
-										r, g, b = E:ColorGradient(progress, 1, 0, 0, 1, 1, 0, 0.25, 1, 0.25)
+										if db.customColor then
+											if db.colorTransition then
+												r, g, b = E:ColorGradient(progress, db.uncompletedColor.r, db.uncompletedColor.g, db.uncompletedColor.b, db.completedColor.r, db.completedColor.g, db.completedColor.b)
+											else
+												r, g, b = db.uncompletedColor.r, db.uncompletedColor.g, db.uncompletedColor.b
+											end
+										else
+											r, g, b = E:ColorGradient(progress, 1, 0, 0, 1, 1, 0, 0.25, 1, 0.25)
+										end
 									end
 								elseif data.done then
 									hasProgress = true
-									r, g, b = 0.25, 1, 0.25
+									if db.customColor then
+										r, g, b = db.completedColor.r, db.completedColor.g, db.completedColor.b
+									else
+										r, g, b = 0.25, 1, 0.25
+									end
 								end
 								break
 							end
@@ -177,7 +209,15 @@ function WF:UpdateWatchFrame()
 							if num and needed then
 								hasProgress = true
 								local progress = tonumber(num) / tonumber(needed)
-								r, g, b = E:ColorGradient(progress, 1, 0, 0, 1, 1, 0, 0.25, 1, 0.25)
+								if db.customColor then
+									if db.colorTransition then
+										r, g, b = E:ColorGradient(progress, db.uncompletedColor.r, db.uncompletedColor.g, db.uncompletedColor.b, db.completedColor.r, db.completedColor.g, db.completedColor.b)
+									else
+										r, g, b = db.uncompletedColor.r, db.uncompletedColor.g, db.uncompletedColor.b
+									end
+								else
+									r, g, b = E:ColorGradient(progress, 1, 0, 0, 1, 1, 0, 0.25, 1, 0.25)
+								end
 							end
 						end
 
@@ -193,16 +233,16 @@ function WF:UpdateWatchFrame()
 end
 
 local function RestoreQuestColors()
-	if not WF.db or not WF.db.color then return end
+	if not WF.db or not WF.db.enable or not WF.db.color then return end
 	WF:UpdateWatchFrame()
 end
 
-function WF:QuestLevelToggle()
-	if WF.db.level or WF:IsHooked('WatchFrame_Update') then
+function WF:ToggleHooks()
+	if WF.db.enable and (WF.db.level or WF.db.color) then
 		if not WF:IsHooked('WatchFrame_Update') then
 			WF:SecureHook('WatchFrame_Update', 'UpdateWatchFrame')
 		end
-	elseif not WF.db.level and not WF.db.color then
+	else
 		if WF:IsHooked('WatchFrame_Update') then
 			WF:Unhook('WatchFrame_Update')
 		end
@@ -210,29 +250,23 @@ function WF:QuestLevelToggle()
 	WatchFrame_Update()
 end
 
+function WF:QuestLevelToggle()
+	WF:ToggleHooks()
+end
+
 function WF:QuestColorToggle()
-	if WF.db.color or WF:IsHooked('WatchFrame_Update') then
-		if not WF:IsHooked('WatchFrame_Update') then
-			WF:SecureHook('WatchFrame_Update', 'UpdateWatchFrame')
-		end
-	elseif not WF.db.color and not WF.db.level then
-		if WF:IsHooked('WatchFrame_Update') then
-			WF:Unhook('WatchFrame_Update')
-		end
-	end
-	WatchFrame_Update()
+	WF:ToggleHooks()
 end
 
 function WF:Initialize()
 	WF.db = E.db.enhanced.watchframe
 
 	WF:UpdateSettings()
-	WF:QuestLevelToggle()
-	WF:QuestColorToggle()
+	WF:ToggleHooks()
 
 	-- Hook color restoration on mouse leave
 	hooksecurefunc('WatchFrame_Update', function()
-		if not WF.db or not WF.db.color then return end
+		if not WF.db or not WF.db.enable or not WF.db.color then return end
 		for _, button in ipairs(WATCHFRAME_LINKBUTTONS or {}) do
 			if not button.__colorHooked then
 				button:HookScript('OnLeave', RestoreQuestColors)
